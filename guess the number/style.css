@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+nav {
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    margin-bottom: 60px;
+}
+
+nav a {
+    color: #00e5ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+}
+
+#wrapper {
+    background: #171717;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 229, 255, 0.05);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional subtle glow at the top edge of the card */
+#wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#guess {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #00e5ff;
+    letter-spacing: 1px;
+}
+
+.guessField {
+    background-color: #252525;
+    border: 2px solid #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.guessField:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    background-color: #1e1e1e;
+}
+
+.guessSubmit {
+    background-color: #00e5ff;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 280px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.guessSubmit:hover {
+    background-color: #00b3cc;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.guessSubmit:active {
+    transform: scale(0.96);
+}
+
+.resultParas {
+    margin-top: 35px;
+    background-color: #1f1f1f;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.resultParas p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultParas p:last-child {
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+.guesses {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.lastResult {
+    color: #ff3366; /* Bright pinkish-red for attempts */
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.lowOrHi {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    min-height: 30px;
+    color: #ffd700; /* Default color, can be updated via JS */
+}
