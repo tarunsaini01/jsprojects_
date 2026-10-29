@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <div class="container">
+    <h1>Generate a <br><span>Random Password</span></h1>
+    <div class="display">
+        <input type="text" id="password" placeholder="Password">
+        <img src="images-2/copy.png" onclick="copyPassword()" title="Copy password" alt="Copy">
+    </div>
+    <button onclick="createPassword()" id="btn"><img src="images-2/generate.png" alt="Generate">Generate Password</button>
+ </div>
+
+ <script>
+    const passwordBox = document.getElementById("password");
+    const length = 12;
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const number = "0123456789";
+    const specialSymbols = "!@#$%^&*()_+~|}{[]></-=";
+    const allChars = upperCase + lowerCase + number + specialSymbols;
+
+    function createPassword(){
+        let password = "";
+        password += upperCase[Math.floor(Math.random() * upperCase.length)];
+        password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+        password += number[Math.floor(Math.random() * number.length)];
+        password += specialSymbols[Math.floor(Math.random() * specialSymbols.length)]; 
+        
+        while(length > password.length){
+            password += allChars[Math.floor(Math.random() * allChars.length)];
+        }
+        passwordBox.value = password;
+    }
+    function copyPassword(){
+        passwordBox.select();
+        navigator.clipboard.writeText(passwordBox.value);
+
+    }
+   
+       
+
+ </script>
+</body>
+</html>
